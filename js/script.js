@@ -1,10 +1,11 @@
 const apiUrl = "http://18.143.79.95/api/priceData/technical-test";
 let currentData = [];
+let previousData = [];
 let currentPage = 1;
 const rowsPerPage = 10;
-const maxVisiblePages = 5;
+let searchTerm = ""; // Store the search term globally
 
-// Create table rows dynamically based on paginated data
+// Create table rows dynamically
 function createRows(data) {
     const tbody = document.querySelector("#price-table-body");
     tbody.innerHTML = '';
@@ -12,18 +13,30 @@ function createRows(data) {
     data.forEach(item => {
         const row = document.createElement("tr");
 
+        const prev = previousData.find(d => d.Symbol === item.Symbol) || {};
+
+        const bidColor = getColor(item.Bid, prev.Bid);
+        const askColor = getColor(item.Ask, prev.Ask);
+        const changeColor = getColor(item.DailyChange, prev.DailyChange);
+
         row.innerHTML = `
             <td>${item.Symbol}</td>
-            <td>${item.Bid}</td>
-            <td>${item.Ask}</td>
-            <td>${(item.Ask - item.Bid).toFixed(5)}</td>
+            <td style="color: ${bidColor}; transition: color 0.3s;">${item.Bid}</td>
+            <td style="color: ${askColor}; transition: color 0.3s;">${item.Ask}</td>
+            <td style="color: ${changeColor}; transition: color 0.3s;">${item.DailyChange}</td>
         `;
 
         tbody.appendChild(row);
     });
 }
 
-// Display a specific page of data
+// Determine color based on price change
+function getColor(current, previous) {
+    if (previous === undefined || current === previous) return "black";
+    return current < previous ? "green" : "red";
+}
+
+// Pagination logic
 function displayPage(data, page) {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
@@ -31,17 +44,14 @@ function displayPage(data, page) {
     createRows(paginatedData);
 }
 
-// Change the current page and update display
 function changePage(page) {
     const totalPages = Math.ceil(currentData.length / rowsPerPage);
     if (page < 1 || page > totalPages) return;
-
     currentPage = page;
     displayPage(currentData, currentPage);
     renderPagination(totalPages);
 }
 
-// Render pagination controls
 function renderPagination(totalPages) {
     const paginationContainer = document.getElementById("pagination");
     paginationContainer.innerHTML = '';
@@ -57,21 +67,17 @@ function renderPagination(totalPages) {
         return btn;
     };
 
-    // « Previous
     paginationContainer.appendChild(createButton("«", currentPage - 1, false, currentPage === 1));
 
-    // Always show first 3 pages
-    const visible = [];
-    for (let i = 1; i <= Math.min(4, totalPages); i++) visible.push(i);
+    const visiblePages = [];
+    for (let i = 1; i <= Math.min(4, totalPages); i++) visiblePages.push(i);
 
-    // Add last page if needed
-    if (totalPages > 4) {
-        if (totalPages > 5) visible.push("...");
-
-        visible.push(totalPages);
+    if (totalPages > 5) {
+        visiblePages.push("...");
+        visiblePages.push(totalPages);
     }
 
-    visible.forEach(p => {
+    visiblePages.forEach(p => {
         if (p === "...") {
             const dots = document.createElement("span");
             dots.textContent = "...";
@@ -82,28 +88,48 @@ function renderPagination(totalPages) {
         }
     });
 
-    // » Next
     paginationContainer.appendChild(createButton("»", currentPage + 1, false, currentPage === totalPages));
 }
 
-
-// Fetch and update price data
+// Fetch API data
 function fetchPriceData() {
     fetch(apiUrl)
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
-            // Sort rows by symbol for consistency
+            // Sort alphabetically to ensure stable row order
             data.sort((a, b) => a.Symbol.localeCompare(b.Symbol));
+
+            // Copy currentData into previousData before updating
+            previousData = currentData.map(item => ({ ...item }));
+
+            // Update currentData with new data
             currentData = data;
 
+            // Apply search filter if there's a search term
+            if (searchTerm) {
+                currentData = currentData.filter(item => item.Symbol.toLowerCase().includes(searchTerm.toLowerCase()));
+            }
+
+            // Display updated page
             displayPage(currentData, currentPage);
             renderPagination(Math.ceil(currentData.length / rowsPerPage));
         })
-        .catch(error => {
-            console.error("Error fetching price data:", error);
-        });
+        .catch(err => console.error("Error fetching price data:", err));
 }
 
-// Initial fetch and periodic update every 1 second
+// Search functionality
+document.getElementById('search').addEventListener('input', function() {
+    searchTerm = this.value.toLowerCase(); // Store the search term globally
+
+    // Filter data based on the search term
+    const filteredData = currentData.filter(item => 
+        item.Symbol.toLowerCase().includes(searchTerm) // Filter based on Symbol (case insensitive)
+    );
+
+    // Display the filtered data
+    displayPage(filteredData, currentPage);
+    renderPagination(Math.ceil(filteredData.length / rowsPerPage)); // Adjust pagination for filtered data
+});
+
 fetchPriceData();
 setInterval(fetchPriceData, 1000);
