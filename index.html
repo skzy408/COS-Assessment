@@ -157,64 +157,92 @@
     <!--               Brand Introduce                -->
     <!-- ============================================ -->
   
-    <div class="section">
-        <div class="content-container">
-            <div class="main-text">
-            <h2><span class="highlight">Brand Introduce</span><br>100% Stocks &<br>0% Commission</h2>
-            <p>Get exactly what you're paying for the commission-free stock investing</p>
-            <button class="cta-btn">Explore</button>
-            </div>
-
-            <div class="cards">
-            <div class="card card-one">
-                <h3>The Perfect Environment For Expert Advisors (EA)</h3>
-                <p>We’ve built the perfect environment for EAs to thrive – we allow scalping, hedging, news trading and more. No requotes and no minimum stop loss distance.</p>
-            </div>
-            <div class="card card-two">
-                <h3>Instant Deposits.<br>Fast Withdrawals.</h3>
-                <p>Fund your account easily and securely through our wide range of payment options. Your funds are held securely in Tier 1 banks.</p>
-            </div>
+    <section>
+        <div class="section">
+            <div class="content-container">
+                <div class="main-text">
+                <h2><span class="highlight">Brand Introduce</span><br>100% Stocks &<br>0% Commission</h2>
+                <p>Get exactly what you're paying for the commission-free stock investing</p>
+                <button class="cta-btn">Explore</button>
+                </div>
+    
+                <div class="cards">
+                <div class="card card-one">
+                    <h3>The Perfect Environment For Expert Advisors (EA)</h3>
+                    <p>We’ve built the perfect environment for EAs to thrive – we allow scalping, hedging, news trading and more. No requotes and no minimum stop loss distance.</p>
+                </div>
+                <div class="card card-two">
+                    <h3>Instant Deposits.<br>Fast Withdrawals.</h3>
+                    <p>Fund your account easily and securely through our wide range of payment options. Your funds are held securely in Tier 1 banks.</p>
+                </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- ============================================ -->
     <!--                Instrument Table              -->
     <!-- ============================================ -->
+    
     <section class="container py-5">
-        <div class="text-center mb-4">
-            <h2 class="fw-bold">Trade Over 5600 Global Markets</h2>
+        <div class="instrument-section">
+            <!-- LEFT: Sidebar -->
+            <div class="sidebar">
+              <h4>Make Your Move</h4>
+              <h2>Trade Over 5600<br>Global Markets.</h2>
+              <p>We Offer Two Levels Of Pricing Depending<br>On Your Account Tier.</p>
+          
+              <div class="search-box">
+                <input type="text" id="search" placeholder="Search Market" />
+                <button><i class="fas fa-search"></i></button>
+              </div>
+          
+              <div class="info-grid">
+                <div><strong>$100</strong><br>Minimum Deposit</div>
+                <div><strong>100%</strong><br>Security of Funds</div>
+                <div><strong>1:500</strong><br>Max Leverage</div>
+                <div><strong>10+</strong><br>Funding Options</div>
+                <div><strong>10000+</strong><br>Trading Instruments</div>
+                <div><strong>&lt;20ms</strong><br>Execution Speed</div>
+              </div>
+            </div>
+          
+            <!-- RIGHT: Table -->
+            <div class="table-container">
+              <table>
+                <!-- Instrument Table -->
+                <div class="mb-3">
+                    <input type="text" id="search-input" class="form-control" placeholder="Search by Symbol">
+                </div>
+        
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped" id="price-table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th style="width: 25%;">Symbol</th>
+                                <th style="width: 25%;">Bid</th>
+                                <th style="width: 25%;">Ask</th>
+                                <th style="width: 25%;">Spread</th>
+                            </tr>
+                        </thead>
+        
+                        <tbody id="price-table-body">
+                            <!-- Rows will be dynamically inserted here -->
+                            <tr><td colspan="4" class="text-center">Loading...</td></tr> <!-- Placeholder row -->
+                        </tbody>
+                    </table>
+                </div>
+              </table>
+              
         </div>
+        <div id="pagination" class="d-flex justify-content-center mt-2"></div>
 
-        <!-- Search Input -->
-        <div class="mb-3">
-            <input type="text" id="searchInput" class="form-control" placeholder="Search by symbol...">
-        </div>
-
-        <!-- Table -->
-        <div class="table-responsive">
-            <table class="table table-bordered" id="instrumentTable">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Symbol</th>
-                        <th>Bid</th>
-                        <th>Ask</th>
-                        <th>Daily Change</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-
-        <!-- Pagination -->
-        <nav>
-            <ul class="pagination justify-content-center" id="pagination"></ul>
-        </nav>
     </section>
-
+    
+    
       
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-
+    <script src="js\script.js"></script>
 </body>
 </html>
