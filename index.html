@@ -4,41 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontend Assessment</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link href="css\style.css" rel="stylesheet">
+    <title>Frontend Assessment 2</title>
 </head>
 
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 border-bottom">
+    <!-- ============================================ -->
+    <!--                   Header                    -->
+    <!-- ============================================ -->
+    <header id="cs-header">
+        <div class="bg-white py-2 border-bottom">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand m-0" href="#"><strong>LOGO</strong></a>
+                <div>
+                    <button class="btn btn-outline-secondary me-2 btn-sm">Demo</button>
+                    <button class="btn btn-outline-secondary me-2 btn-sm">Login</button>
+                    <button class="btn btn-danger btn-sm">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!--                   Nav Bar                    -->
+    <!-- ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 border-bottom">
         <div class="container">
-            <a class="navbar-brand" href="#"><strong>LOGO</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">Trading</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Platforms</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Clients Tools</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Promotions</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Research</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Partnerships</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Trading</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Platforms</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Clients Tools</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Promotions</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Research</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Partnerships</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">About Us</a></li>
                 </ul>
-                <div class="d-flex">
-                    <button class="btn btn-outline-secondary">Demo</button>
-                    <button class="btn btn-outline-dark">Login</button>
-                    <button class="btn btn-danger">Sign Up</button>
-                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Banner -->
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
     <section class="banner">
         <div class="container banner-text">
             <h1 class="mb-3">Merry Christmas</h1>
@@ -46,6 +60,161 @@
             <a href="#" class="btn btn-outline-light">CHECK OUR PROMOTIONS</a>
         </div>
     </section>
+
+    <!-- ============================================ -->
+    <!--                     Banks                    -->
+    <!-- ============================================ -->
+    <section class="container py-5">
+        <div class="row text-center mb-1">
+            <div class="col-md-2 col-4 mb-3">
+                <img src="images/brands/hsbc.png" class="img-fluid" alt="HSBC">
+            </div>
+            <div class="col-md-2 col-4 mb-3">
+                <img src="images/brands/ubs.png" class="img-fluid" alt="UBS">
+            </div>
+            <div class="col-md-2 col-4 mb-3">
+                <img src="images/brands/citi.png" class="img-fluid" alt="Citi">
+            </div>
+            <div class="col-md-2 col-4 mb-3">
+                <img src="images/brands/bofa.png" class="img-fluid" alt="Bank of America">
+            </div>
+            <div class="col-md-2 col-4 mb-3">
+                <img src="images/brands/cme.png" class="img-fluid" alt="CME Group">
+            </div>
+            <div class="col-md-2 col-4 mb-3">
+                <img src="images/brands/deutsche.png" class="img-fluid" alt="Deutsche Bank">
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!--               Popular Instruments            -->
+    <!-- ============================================ -->
+    <section class="container py-1">
+        <div class="text-left mb-5">
+            <h6 class="text-danger">Access To The Most</h6>
+            <h2 class="fw-bold">POPULAR INSTRUMENTS</h2>
+        </div>
+
+        <div class="row text-start">
+            <div class="col-md-6 mb-4 ">
+                <div class="d-flex align-items-start mb-5">
+                    <img src="images/icons/forex.png" alt="Forex" class="me-3" width="32">
+                    <div>
+                        <h6 class="fw-bold">Forex</h6>
+                        <p class="mb-0">Trade over 100 currency pairs, including the majors, minors and exotics, with ultra-low spreads and fast execution.</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start mb-5">
+                    <img src="images/icons/stock.png" alt="Stocks" class="me-3" width="32">
+                    <div>
+                        <h6 class="fw-bold">Stocks</h6>
+                        <p class="mb-0">Get access to major international stocks (Apple, Google, Tesla) with no commissions or re-quotes and no hidden mark-ups.</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start mb-5">
+                    <img src="images/icons/indices.png" alt="Indices" class="me-3" width="32">
+                    <div>
+                        <h6 class="fw-bold">Stock Indices</h6>
+                        <p class="mb-0">Access global indices like S&P 500, Nasdaq 100 with fast execution and no mark-ups.</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start mb-5">
+                    <img src="images/icons/wheat.png" alt="Commodities" class="me-3" width="32">
+                    <div>
+                        <h6 class="fw-bold">Commodities</h6>
+                        <p class="mb-0">Trade commodities like cotton, cocoa and wheat with ultra-low spreads and quick execution.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="d-flex align-items-start mb-5">
+                    <img src="images/icons/gold.png" alt="Precious Metals" class="me-3" width="32">
+                    <div>
+                        <h6 class="fw-bold">Precious Metals</h6>
+                        <p class="mb-0">Speculate on gold and silver movements against the USD and diversify your trading portfolio.</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start mb-5">
+                    <img src="images/icons/energy.png" alt="Energies" class="me-3" width="32">
+                    <div>
+                        <h6 class="fw-bold">Energies</h6>
+                        <p class="mb-0">Trade spot energies such as Brent oil and natural gas with tight spreads and no hidden fees.</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start mb-5">
+                    <img src="images/icons/crypto.png" alt="Cryptocurrencies" class="me-3" width="32">
+                    <div>
+                        <h6 class="fw-bold">Cryptocurrencies</h6>
+                        <p class="mb-0">Explore cryptocurrencies like Bitcoin, Ethereum, and Litecoin with ultra-low spreads and rapid execution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </section>
+
+    <!-- ============================================ -->
+    <!--               Brand Introduce                -->
+    <!-- ============================================ -->
+  
+    <div class="section">
+        <div class="content-container">
+            <div class="main-text">
+            <h2><span class="highlight">Brand Introduce</span><br>100% Stocks &<br>0% Commission</h2>
+            <p>Get exactly what you're paying for the commission-free stock investing</p>
+            <button class="cta-btn">Explore</button>
+            </div>
+
+            <div class="cards">
+            <div class="card card-one">
+                <h3>The Perfect Environment For Expert Advisors (EA)</h3>
+                <p>We’ve built the perfect environment for EAs to thrive – we allow scalping, hedging, news trading and more. No requotes and no minimum stop loss distance.</p>
+            </div>
+            <div class="card card-two">
+                <h3>Instant Deposits.<br>Fast Withdrawals.</h3>
+                <p>Fund your account easily and securely through our wide range of payment options. Your funds are held securely in Tier 1 banks.</p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!--                Instrument Table              -->
+    <!-- ============================================ -->
+    <section class="container py-5">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Trade Over 5600 Global Markets</h2>
+        </div>
+
+        <!-- Search Input -->
+        <div class="mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search by symbol...">
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table table-bordered" id="instrumentTable">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Bid</th>
+                        <th>Ask</th>
+                        <th>Daily Change</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <nav>
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+        </nav>
+    </section>
+
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
 </body>
 </html>

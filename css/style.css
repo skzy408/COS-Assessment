@@ -2,13 +2,16 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/*-- -------------------------- -->
+<---            Banner          -->
+<--- -------------------------- -*/
 
 .navbar .btn {
     margin-left: 10px;
 }
 
 .banner {
-    background: url('your-banner-image.jpg') no-repeat center center/cover;
+    background: url('images/banner/background.webp') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 100px 20px;
@@ -39,3 +42,104 @@ body {
     font-size: 1.5rem;
     margin-bottom: 30px;
 }
+
+
+/*-- -------------------------- -->
+<---      Brand Introduce       -->
+<--- -------------------------- -*/
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+  }
+  
+  .section {
+    padding: 3rem 2rem;
+  }
+  
+  .content-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .main-text {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    flex: 1;
+    z-index: 2;
+  }
+  
+  .main-text h2 {
+    font-size: 2.2rem;
+    margin: 0 0 1rem;
+    font-weight: 800;
+  }
+  
+  .highlight {
+    color: #f43f5e;
+    font-weight: 600;
+  }
+  
+  .main-text p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-btn {
+    background: #f43f5e;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .cards {
+    flex: 1;
+    margin-left: -80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* ensures cards don't overlap */
+    padding-top: 2rem;
+    z-index: 3; /* ensures whole stack is above main-text */
+  }
+  
+  .card-one {
+    z-index: 4; /* topmost */
+    transform: none; /* remove translateY if no overlap is needed */
+    position: relative;
+  }
+  
+  .card-two {
+    z-index: 3;
+    position: relative;
+  }
+  
+  .card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    max-width: 100%;
+  }
+  
+  
+  
+  .card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
