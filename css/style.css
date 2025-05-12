@@ -140,6 +140,10 @@ body {
   line-height: 1.5;
 }
 
+
+/*-- -------------------------- -->
+<---      Instrument Table      -->
+<--- -------------------------- -*/
 #price-table {
   table-layout: fixed;
   width: 100%;
@@ -197,3 +201,15 @@ td {
 #price-table td {
   width: 100px;
 }
+
+
+/*-- -------------------------- -->
+<---           Footer           -->
+<--- -------------------------- -*/
+
+/* .social-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    object-fit: contain;
+} */
