@@ -37,7 +37,7 @@ function createRows(data) {
 
         const bidColor = getColor(item.Bid, prev.Bid);
         const askColor = getColor(item.Ask, prev.Ask);
-        const changeColor = getColor(item.DailyChange, prev.DailyChange);
+        const changeColor = getDailyChangeColor(item.DailyChange);
 
         row.innerHTML = `
             <td class="fw-bold">${item.Symbol}</td>
@@ -54,7 +54,12 @@ function createRows(data) {
 // Determine color based on price change
 function getColor(current, previous) {
     if (previous === undefined || current === previous) return "black";
-    return current < previous ? "green" : "#ff2261";
+    return current < previous ? "#15b398" : "#ff2261";
+}
+
+// Determine color for DailyChange column (Green for negative, Red for positive)
+function getDailyChangeColor(change) {
+    return change < 0 ? "#15b398" : "#ff2261"; // Green for negative change, Red for positive change
 }
 
 // Pagination logic
