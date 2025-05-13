@@ -9,7 +9,7 @@ let searchTerm = ""; // Store the search term globally
 // Banner Hover Movement
 var scene = document.getElementById("scene");
 var parallaxInstance = new Parallax(scene, {
-  relativeInput: true
+    relativeInput: true
 });
 
 
@@ -29,13 +29,18 @@ function createRows(data) {
 
         row.innerHTML = `
             <td>${item.Symbol}</td>
-            <td style="color: ${bidColor}; transition: color 0.3s;">${item.Bid}</td>
-            <td style="color: ${askColor}; transition: color 0.3s;">${item.Ask}</td>
-            <td style="color: ${changeColor}; transition: color 0.3s;">${item.DailyChange}</td>
+            <td style="color: ${bidColor}; transition: color 0.3s;">${roundTo4(item.Bid)}</td>
+            <td style="color: ${askColor}; transition: color 0.3s;">${roundTo4(item.Ask)}</td>
+            <td style="color: ${changeColor}; transition: color 0.3s;">${roundTo4(item.DailyChange)}</td>
         `;
 
         tbody.appendChild(row);
     });
+}
+
+// Round to 4 decimals
+function roundTo4(value) {
+    return typeof value === "number" ? value.toFixed(4) : value;
 }
 
 // Determine color based on price change
@@ -126,11 +131,11 @@ function fetchPriceData() {
 }
 
 // Search functionality
-document.getElementById('search').addEventListener('input', function() {
+document.getElementById('search').addEventListener('input', function () {
     searchTerm = this.value.toLowerCase(); // Store the search term globally
 
     // Filter data based on the search term
-    const filteredData = currentData.filter(item => 
+    const filteredData = currentData.filter(item =>
         item.Symbol.toLowerCase().includes(searchTerm) // Filter based on Symbol (case insensitive)
     );
 
