@@ -139,7 +139,6 @@ document.getElementById('search').addEventListener('input', function() {
     renderPagination(Math.ceil(filteredData.length / rowsPerPage)); // Adjust pagination for filtered data
 });
 
-z
 
 fetchPriceData();
 setInterval(fetchPriceData, 1000);
