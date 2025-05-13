@@ -5,6 +5,14 @@ let currentPage = 1;
 const rowsPerPage = 10;
 let searchTerm = ""; // Store the search term globally
 
+
+// Banner Hover Movement
+var scene = document.getElementById("scene");
+var parallaxInstance = new Parallax(scene, {
+  relativeInput: true
+});
+
+
 // Create table rows dynamically
 function createRows(data) {
     const tbody = document.querySelector("#price-table-body");
@@ -130,6 +138,8 @@ document.getElementById('search').addEventListener('input', function() {
     displayPage(filteredData, currentPage);
     renderPagination(Math.ceil(filteredData.length / rowsPerPage)); // Adjust pagination for filtered data
 });
+
+z
 
 fetchPriceData();
 setInterval(fetchPriceData, 1000);
