@@ -12,6 +12,18 @@ var parallaxInstance = new Parallax(scene, {
     relativeInput: true
 });
 
+// Round to 4 decimals
+function roundTo4(value) {
+    const num = parseFloat(value);
+    if (isNaN(num)) return value;
+
+    const decimalPart = value.toString().split(".")[1];
+    if (!decimalPart || decimalPart.length <= 4) {
+        return value;
+    }
+
+    return num.toFixed(4);
+}
 
 // Create table rows dynamically
 function createRows(data) {
@@ -28,7 +40,7 @@ function createRows(data) {
         const changeColor = getColor(item.DailyChange, prev.DailyChange);
 
         row.innerHTML = `
-            <td>${item.Symbol}</td>
+            <td class="fw-bold">${item.Symbol}</td>
             <td style="color: ${bidColor}; transition: color 0.3s;">${roundTo4(item.Bid)}</td>
             <td style="color: ${askColor}; transition: color 0.3s;">${roundTo4(item.Ask)}</td>
             <td style="color: ${changeColor}; transition: color 0.3s;">${roundTo4(item.DailyChange)}</td>
@@ -38,15 +50,11 @@ function createRows(data) {
     });
 }
 
-// Round to 4 decimals
-function roundTo4(value) {
-    return typeof value === "number" ? value.toFixed(4) : value;
-}
 
 // Determine color based on price change
 function getColor(current, previous) {
     if (previous === undefined || current === previous) return "black";
-    return current < previous ? "green" : "red";
+    return current < previous ? "green" : "#ff2261";
 }
 
 // Pagination logic

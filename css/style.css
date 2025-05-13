@@ -2,12 +2,27 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 /*-- -------------------------- -->
 <---            Nav Bar         -->
 <--- -------------------------- -*/
 
 .navbar .btn {
     margin-left: 10px;
+}
+
+.btn-custom-danger {
+    background-color: #ff2261;
+    color: white;
+}
+
+.btn-custom-danger:hover {
+    background-color: #c1204e;
+    color: white;
+}
+
+.nav-item {
+    color: black;
 }
 
 /*-- -------------------------- -->
@@ -125,6 +140,12 @@ body {
     margin-top: 14px;
     color: #ffffff;
     letter-spacing: 1px;
+}
+
+
+.text-danger {
+    color: #ff2261 !important;
+    /* Example: a warm orange */
 }
 
 /*-- -------------------------- -->
