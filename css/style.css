@@ -161,6 +161,7 @@ body {
 .section {
     padding: 3rem 2rem;
     position: relative;
+    max-height: fit-content;
     overflow: hidden;
 }
 
@@ -168,7 +169,7 @@ body {
 .content-container {
     display: flex;
     max-width: 1000px;
-    max-height: 400px;
+    max-height: fit-content;
     margin: 0 auto;
     position: relative;
 }
@@ -283,8 +284,76 @@ body {
     width: 20%;
     margin-left: -00px;
 }
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .section {
+        max-height: none; /* Remove max-height restriction */
+    }
 
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem; /* Adds space below content */
+    }
 
+    .main-text {
+        flex: 0 0 100%;
+        margin-bottom: 2rem; /* Adds spacing between text and cards */
+    }
+
+    .cards {
+        flex: 0 0 100%;
+        gap: 1rem; /* Reduce gap between cards */
+        order: 1; /* Pushes the cards below the main text */
+    }
+
+    .card-one, .card-two {
+        margin-left: 0;
+        margin-bottom: 1rem; /* Add spacing between the two cards */
+    }
+
+    .bg-img-left {
+        width: 50%; /* Adjust image width */
+        margin-right: -150px;
+    }
+
+    .bg-img-right {
+        width: 50%; /* Adjust image width */
+        margin-left: -150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-text h2 {
+        font-size: 1.8rem; /* Adjust font size for smaller screens */
+    }
+
+    .main-text p {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+
+    .cta-btn {
+        font-size: 1rem; /* Adjust font size for button */
+        padding: 0.5rem 1.2rem; /* Adjust padding */
+    }
+
+    .cards {
+        gap: 1.5rem; /* Adjust card gap */
+    }
+
+    .card h3 {
+        font-size: 1rem; /* Adjust font size for card titles */
+    }
+
+    .card p {
+        font-size: 0.85rem; /* Adjust font size for card text */
+    }
+
+    .bg-img-left, .bg-img-right {
+        width: 100%; /* Make images take full width */
+        margin: 0;
+    }
+}
 
 /*-- -------------------------- -->
 <---      Instrument Table      -->
