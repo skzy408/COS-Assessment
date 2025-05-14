@@ -85,7 +85,7 @@ function renderPagination(totalPages) {
     const createButton = (label, page, isActive = false, isDisabled = false) => {
         const btn = document.createElement("button");
         btn.textContent = label;
-        btn.className = `btn btn-sm me-1 ${isActive ? 'btn-danger' : 'btn-outline-secondary'}`;
+        btn.className = `btn btn-sm me-1 ${isActive ? 'btn-custom-page' : 'btn-outline-secondary'}`;
         btn.disabled = isDisabled;
         if (!isDisabled && !isNaN(page)) {
             btn.onclick = () => changePage(page);
