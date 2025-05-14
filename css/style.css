@@ -483,7 +483,36 @@ td {
     color: white;
 }
 
+@media (max-width: 480px) {
+    .sidebar h2 {
+        font-size: 1.25rem;
+    }
 
+    .sidebar p,
+    .sidebar h4 {
+        font-size: 1rem;
+    }
+
+    .info-grid {
+        font-size: 0.8rem;
+    }
+
+    #price-table th,
+    #price-table td {
+        font-size: 0.6rem;
+        padding: 0.4rem;
+    }
+
+    .search-box input {
+        font-size: 0.8rem;
+    }
+
+    .btn-custom-page,
+    .btn-outline-secondary {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
 
 /*-- -------------------------- -->
 <---       Make Your Move       -->
