@@ -1,5 +1,5 @@
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 
@@ -189,11 +189,6 @@ body {
 <---      Brand Introduce       -->
 <--- -------------------------- -*/
 
-body {
-    margin: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: #f9f9f9;
-}
 
 .section {
     padding: 3rem 2rem;
